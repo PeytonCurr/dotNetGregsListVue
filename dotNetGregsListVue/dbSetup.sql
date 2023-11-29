@@ -9,3 +9,16 @@ CREATE TABLE
         email varchar(255) COMMENT 'User Email',
         picture varchar(255) COMMENT 'User Picture'
     ) default charset utf8mb4 COMMENT '';
+
+CREATE TABLE
+    IF NOT EXISTS cars(
+        id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+        make VARCHAR(255) NOT NULL,
+        model VARCHAR(255) NOT NULL,
+        imgUrl VARCHAR(255) NOT NULL,
+        body VARCHAR(255) NOT NULL,
+        pice INT NOT NULL,
+        description VARCHAR(500) NOT NULL,
+        creatorId VARCHAR(255) NOT NULL,
+        Foreign Key (creatorId) REFERENCES accounts(id) ON DELETE CASCADE
+    ) default charset utf8mb4 COMMENT '';
