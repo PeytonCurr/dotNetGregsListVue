@@ -1,4 +1,3 @@
-
 {
   "folders": [
     {
@@ -8,7 +7,11 @@
     {
       "path": "dotNetGregsListVue",
       "name": "server"
-    },{"path":".github/workflows", "name":"workflows"}
+    },
+    {
+      "path": ".github/workflows",
+      "name": "workflows"
+    }
   ],
   "settings": {
     "editor.suggestSelection": "first",
@@ -40,6 +43,26 @@
     },
     "[vue]": {
       "editor.defaultFormatter": "Vue.volar"
-    }
+    },
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#f0faa7",
+      "activityBar.background": "#f0faa7",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#0cbbd3",
+      "activityBarBadge.foreground": "#15202b",
+      "commandCenter.border": "#15202b99",
+      "sash.hoverBorder": "#f0faa7",
+      "statusBar.background": "#e8f876",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#e0f645",
+      "statusBarItem.remoteBackground": "#e8f876",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#e8f876",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#e8f87699",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#e8f876"
   }
 }
