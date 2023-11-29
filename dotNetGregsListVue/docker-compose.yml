@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: your-dockerhub-username/dotNetGregsListVue:latest
+    env_file:
+      - dotNetGregsListVue-env
+    ports:
+      - "7045:80"
