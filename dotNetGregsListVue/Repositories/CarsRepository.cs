@@ -16,7 +16,7 @@ public class CarsRepository
 SELECT
 c.*,
 acct.*
-FROM Cars c
+FROM cars c
 JOIN accounts acct ON acct.id = c.creatorId
 ;";
     List<Car> cars = _db.Query<Car, Profile, Car>(sql, (c, acct) =>
