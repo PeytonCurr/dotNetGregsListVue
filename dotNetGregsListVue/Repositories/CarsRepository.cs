@@ -1,3 +1,4 @@
+
 namespace dotNetGregsListVue.Repositories;
 
 public class CarsRepository
@@ -7,5 +8,22 @@ public class CarsRepository
   public CarsRepository(IDbConnection db)
   {
     _db = db;
+  }
+
+  internal List<Car> GetAll()
+  {
+    string sql = @"
+SELECT
+c.*,
+acct.*
+FROM Cars c
+JOIN accounts acct ON acct.id = c.creatorId
+;";
+    List<Car> cars = _db.Query<Car, Profile, Car>(sql, (c, acct) =>
+    {
+      c.Seller = acct;
+      return c;
+    }).ToList();
+    return cars;
   }
 }
