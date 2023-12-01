@@ -17,7 +17,7 @@ public class CarsRepository
   INSERT INTO cars
     (make, model, imgUrl, body, price, description, creatorId)
   values
-    (@make, @model, @imgUrl, @body, @price, @description, @creatorId)
+    (@make, @model, @imgUrl, @body, @price, @description, @creatorId);
   SELECT LAST_INSERT_ID()
   ;";
     int id = _db.ExecuteScalar<int>(sql, carData);
