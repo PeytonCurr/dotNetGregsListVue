@@ -46,11 +46,12 @@ public class CarsController : ControllerBase
   }
 
   [HttpGet("{carId}")]
-  public ActionResult<Car> GetCarById()
+  public ActionResult<Car> GetCarById(int carId)
   {
     try
     {
-      return Ok();
+      Car car = _carsService.GetCarById(carId);
+      return Ok(car);
     }
     catch (Exception e)
     {

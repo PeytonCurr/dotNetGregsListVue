@@ -1,5 +1,6 @@
 
 
+
 namespace dotNetGregsListVue.Services;
 
 public class CarsService
@@ -21,5 +22,12 @@ public class CarsService
   {
     List<Car> cars = _repo.GetAllCars();
     return cars;
+  }
+
+  internal Car GetCarById(int carId)
+  {
+    Car car = _repo.GetCarById(carId);
+    if (car == null) throw new Exception($"The Car you are trying to get, with the ID: {carId}, does not exist!");
+    return car;
   }
 }

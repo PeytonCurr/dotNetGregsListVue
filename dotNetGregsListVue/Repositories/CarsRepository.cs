@@ -1,5 +1,6 @@
 
 
+
 namespace dotNetGregsListVue.Repositories;
 
 public class CarsRepository
@@ -40,5 +41,23 @@ JOIN accounts acct ON acct.id = c.creatorId
       return c;
     }).ToList();
     return cars;
+  }
+
+  internal Car GetCarById(int carId)
+  {
+    string sql = @"
+SELECT
+c.*,
+acct.*
+FROM cars c
+JOIN accounts acct ON acct.id = c.creatorId
+WHERE c.id = @carId
+;";
+    Car car = _db.Query<Car, Profile, Car>(sql, (c, acct) =>
+    {
+      c.Seller = acct;
+      return c;
+    }, new { carId }).FirstOrDefault();
+    return car;
   }
 }
