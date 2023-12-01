@@ -17,9 +17,9 @@ public class CarsService
     return car;
   }
 
-  internal List<Car> GetAll()
+  internal List<Car> GetAllCars()
   {
-    List<Car> cars = _repo.GetAll();
+    List<Car> cars = _repo.GetAllCars();
     return cars;
   }
 }

@@ -32,12 +32,25 @@ public class CarsController : ControllerBase
   }
 
   [HttpGet]
-  public ActionResult<List<Car>> GetAll()
+  public ActionResult<List<Car>> GetAllCars()
   {
     try
     {
-      List<Car> cars = _carsService.GetAll();
+      List<Car> cars = _carsService.GetAllCars();
       return Ok(cars);
+    }
+    catch (Exception e)
+    {
+      return BadRequest(e.Message);
+    }
+  }
+
+  [HttpGet("{carId}")]
+  public ActionResult<Car> GetCarById()
+  {
+    try
+    {
+      return Ok();
     }
     catch (Exception e)
     {

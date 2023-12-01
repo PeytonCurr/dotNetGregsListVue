@@ -25,7 +25,7 @@ public class CarsRepository
     return carData;
   }
 
-  internal List<Car> GetAll()
+  internal List<Car> GetAllCars()
   {
     string sql = @"
 SELECT
