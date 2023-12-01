@@ -1,4 +1,5 @@
 
+
 namespace dotNetGregsListVue.Services;
 
 public class CarsService
@@ -8,6 +9,12 @@ public class CarsService
   public CarsService(CarsRepository repo)
   {
     _repo = repo;
+  }
+
+  internal Car CreateCar(Car carData)
+  {
+    Car car = _repo.CreateCar(carData);
+    return car;
   }
 
   internal List<Car> GetAll()

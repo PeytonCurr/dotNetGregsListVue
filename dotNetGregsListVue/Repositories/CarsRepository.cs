@@ -1,4 +1,5 @@
 
+
 namespace dotNetGregsListVue.Repositories;
 
 public class CarsRepository
@@ -8,6 +9,20 @@ public class CarsRepository
   public CarsRepository(IDbConnection db)
   {
     _db = db;
+  }
+
+  internal Car CreateCar(Car carData)
+  {
+    string sql = @"
+  INSERT INTO cars
+    (make, model, imgUrl, body, price, description, creatorId)
+  values
+    (@make, @model, @imgUrl, @body, @price, @description, @creatorId)
+  SELECT LAST_INSERT_ID()
+  ;";
+    int id = _db.ExecuteScalar<int>(sql, carData);
+    carData.Id = id;
+    return carData;
   }
 
   internal List<Car> GetAll()
