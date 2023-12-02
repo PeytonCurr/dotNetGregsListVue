@@ -30,4 +30,9 @@ public class CarsService
     if (car == null) throw new Exception($"The Car you are trying to get, with the ID: {carId}, does not exist!");
     return car;
   }
+
+  internal string DeleteCar(int carId, string id)
+  {
+    throw new NotImplementedException();
+  }
 }
